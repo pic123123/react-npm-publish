@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# React Component Npm Publish
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React에서 공통 Component를 만들어서 여러 Repository에서 사용하기 위한 테스트
 
-## Available Scripts
+- Private은 유료라서 Public으로 배포
 
-In the project directory, you can run:
+- minor version up 에서 npm publish를 진행하더라도 확실히 약 5분정도 배포시까지 시간이 소요됨
 
-### `npm start`
+## https://www.npmjs.com/package/joker-sleep-await
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 참고글
+  https://velog.io/@junghyeonsu/NPM-%EB%B0%B0%ED%8F%AC-%EC%96%B4%EB%A0%B5%EC%A7%80-[…]A%B5%AC%EA%B8%80-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8-4%EA%B8%B0
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 사용
 
-### `npm test`
+```
+    "publish:npm": "rm -rf dist && mkdir dist && tsc",
+    "prepare": "npm run publish:npm"
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- prepare 스크립트를 추가해놓아야 합니다.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+rm -rf dist 명령어로 dist폴더를 삭제하고
+mkdir dist 명령어로 다시 dist 폴더를 만들고
+다시 만들어진 폴더에 tsc 명령어로 컴파일을 진행해서 나온 파일들을 dist에 넣는 과정입니다.
+npm 배포를 하기전에 실행하는 명령어 입니다.
