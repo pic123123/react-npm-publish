@@ -1,6 +1,6 @@
 {
-  "name": "joker-sleep-await",
-  "version": "0.1.10",
+  "name": "joker-react-components",
+  "version": "0.1.0",
   "private": false,
   "babel": {
     "presets": [
